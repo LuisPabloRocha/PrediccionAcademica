@@ -1,16 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {routing, appRoutingProviders} from './app.routing';
 
 import { AppComponent } from './app.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AlgoritmoComponent } from './components/algoritmo/algoritmo.component';
+import { PrediccionComponent } from './components/prediccion/prediccion.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarComponent,
+    HeaderComponent,
+    HomeComponent,
+    AlumnosComponent,
+    LoginComponent,
+    FooterComponent,
+    AlgoritmoComponent,
+    PrediccionComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing,
+    NgbModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

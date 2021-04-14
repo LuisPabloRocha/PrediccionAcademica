@@ -1,0 +1,11 @@
+#cartas 
+{
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+#cartas fa-icon
+{
+    font-size: 40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

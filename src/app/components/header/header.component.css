@@ -1,0 +1,102 @@
+
+#header {
+    width: 100%;
+    background: rgb(27,50,87);
+    border-bottom: 1px solid #ccc;
+}
+
+.center{
+    width: 90%;
+    margin: 0px auto;
+}
+
+.clearfix{
+    clear:both;
+    float:none;
+}
+
+#brand {
+    display: block;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    float: left;
+    font-size: 25px;
+    color: white;
+}
+
+#menu{
+    float:left;
+    font-size: 18px;
+}
+
+#logo {
+    width: 40%;
+    font-size: 30px;
+    float: left;
+    margin-top: 14px;
+}
+
+#logo img {
+    display: block;
+    float: left;
+    height: 80px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+/*RESPONSIVE*/
+
+/*Desde la anchura 963px hasta la anchura 1488px de pantalla*/
+@media (max-width: 1488px){
+    /*Se ejecutarán estos estilos*/
+    .center{
+        width: 85%;
+    }
+}
+
+/*Desde la anchura 0px hasta la anchura 963px de pantalla*/
+@media (max-width: 1314px){
+    .center{
+        width: 90%;
+    }
+}
+
+@media (max-width: 881px){
+   
+}
+
+@media (max-width: 813px){
+    #header{
+        min-height: 130px;
+        overflow:hidden;
+    }
+    #brand {
+        margin: 0px;
+        justify-content: right;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    
+    #logo img{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 497px){
+    #header{
+        min-height: 130px;
+        overflow:hidden;
+    }
+    
+    #brand {
+    margin: 0px;
+    justify-content: right;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    }
+
+    #logo img{
+        margin-top: 10px;
+    }
+}
