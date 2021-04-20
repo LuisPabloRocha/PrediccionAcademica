@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'damp-savannah-33785.herokuapp.com/'
 };
