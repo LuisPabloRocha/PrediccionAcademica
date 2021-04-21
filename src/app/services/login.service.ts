@@ -22,11 +22,8 @@ export class LoginService {
   login(data): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
     })
-    console.log(data);
     data = JSON.stringify(data)
-    console.log(data);
     return this._http.post(this.url + 'auth/login', data, { headers: headers }).pipe(map(res => res));
   }
 
