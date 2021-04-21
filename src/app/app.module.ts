@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {routing, appRoutingProviders} from './app.routing';
+import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AlgoritmoComponent } from './components/algoritmo/algoritmo.component';
 import { PrediccionComponent } from './components/prediccion/prediccion.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { PrediccionComponent } from './components/prediccion/prediccion.componen
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     routing,
     NgbModule,
     FontAwesomeModule
