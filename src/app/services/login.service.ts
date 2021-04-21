@@ -37,7 +37,7 @@ export class LoginService {
   logOut(token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
     return this._http.post(this.url + 'auth/logout', { headers: headers }).pipe(map(res => res));
   }
@@ -57,5 +57,12 @@ export class LoginService {
   setToken(token) {
     //Guardamos el token del usuario en el sessionStorage
     sessionStorage.setItem('token', JSON.stringify(token));
+  }
+  /**
+   * Función para eliminar el token del sesión storage
+   */
+  clearToken() {
+    //Borramos el token del usuario del sessionStorage
+    sessionStorage.removeItem('token');
   }
 }
