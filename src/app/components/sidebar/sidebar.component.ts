@@ -7,6 +7,8 @@ import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faBookReader } from '@fortawesome/free-solid-svg-icons';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -21,15 +23,32 @@ export class SidebarComponent implements OnInit {
   faUserFriends = faUserFriends;
   faBookReader = faBookReader;
   faNetworkWired = faNetworkWired;
-  
-  constructor() { }
+
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   title = 'angularbootstrap';
-   ngOnInit() {
-    $("#menu-toggle").click(function(e) {
+  ngOnInit() {
+    $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   }
 
+  cerrarSesion() {
+    this.loginService.clearToken()
+    this.loginService.session = false;
+    this.router.navigateByUrl('/login')
+    // this.loginService.logOut(this.loginService.getToken()).subscribe(
+    //   response => {
+    //     console.log(response)
+    //   },
+    //   error => {
+    //     console.log(error);
+
+    //   }
+    // )
+  }
 }
