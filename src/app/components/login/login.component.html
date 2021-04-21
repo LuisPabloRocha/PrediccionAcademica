@@ -12,13 +12,16 @@
             <div class="col-lg-6">
                 <div class="card2 card border-0 px-4 py-5 mb-4">
                     <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Clave</h6>
-                        </label> <input class="mb-4" type="text" name="clave" placeholder="Ingresa tu clave"> </div>
+                            <h6 class="mb-0 text-sm">Usuario</h6>
+                        </label> <input class="mb-4" type="text" name="clave" placeholder="Ingresa tu usuario"
+                            [(ngModel)]="user.username"> </div>
                     <div class="row px-3"> <label class="mb-1">
                             <h6 class="mb-0 text-sm">Contraseña</h6>
-                        </label> <input type="password" name="password" placeholder="Ingresa contraseña"> </div>
+                        </label> <input type="password" name="password" placeholder="Ingresa contraseña"
+                            [(ngModel)]="user.password"> </div>
 
-                    <div class="row mb-3 px-3"> <a type="submit" class="btn btn-yellow text-center">Ingresar</a></div>
+                    <div class="row mb-3 px-3"> <a type="submit" class="btn btn-yellow text-center"
+                            (click)="iniciarSesion()">Ingresar</a></div>
                 </div>
             </div>
         </div>
