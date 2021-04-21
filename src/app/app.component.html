@@ -1,10 +1,10 @@
 <app-header></app-header>
 
 <div class="content">
-    <div *ngIf="sesion == true">
+    <div *ngIf="loginService.session == true">
         <app-sidebar></app-sidebar>
     </div>
-    <div *ngIf="sesion == false">
+    <div *ngIf="loginService.session == false">
         <app-login></app-login>
     </div>
 </div>

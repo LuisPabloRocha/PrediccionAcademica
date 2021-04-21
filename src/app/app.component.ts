@@ -9,15 +9,15 @@ import { LoginService } from 'src/app/services/login.service'
 })
 export class AppComponent implements OnInit {
   title = 'PrediccionAcademica';
-  sesion: boolean;
+  // sesion: boolean;
   constructor(
-    private loginService: LoginService,
+    public loginService: LoginService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     //Inicializamos la variable de sesión en falso
-    this.sesion = false;
+    this.loginService.session = false;
     //Si no hay un token guardado
     if (this.loginService.getToken() == null) {
       //Redirigimos al login
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     }
     else {
       //Hacemos true la variable
-      this.sesion = true;
+      this.loginService.session = true;
     }
   }
 }
