@@ -9,9 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
   private url: string;
+  public session: boolean;
 
   constructor(private _http: HttpClient) {
     this.url = environment.url;
+    this.session = false;
   }
 
   /**
