@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   }
   //#endregion
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -55,7 +57,15 @@ export class LoginComponent implements OnInit {
       //Iniciamos sesión
       this.loginService.login(this.user).subscribe(
         response => {
-          console.log(response);
+          //Si en la respuesta contiene el token
+          if (response.token != null) {
+            //Lo guardamos
+            this.loginService.setToken(response.token)
+            //Actualizamos el inicio de sesión
+            this.loginService.session = true;
+            //Enrutamos al login
+            this.router.navigateByUrl('/home');
+          }
         },
         error => {
           console.log(error);
