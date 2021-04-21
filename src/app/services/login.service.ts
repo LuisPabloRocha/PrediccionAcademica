@@ -65,4 +65,5 @@ export class LoginService {
     //Borramos el token del usuario del sessionStorage
     sessionStorage.removeItem('token');
   }
+  
 }
