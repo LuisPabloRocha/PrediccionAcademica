@@ -15,6 +15,8 @@ import { AlgoritmoComponent } from './components/algoritmo/algoritmo.component';
 import { PrediccionComponent } from './components/prediccion/prediccion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { BarchartComponent } from './components/barchart/barchart.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     AlgoritmoComponent,
     PrediccionComponent,
+    BarchartComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     routing,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ChartsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

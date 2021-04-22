@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { PredictionService } from 'src/app/services/prediction.service';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+
+
+import { Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-prediccion',
@@ -45,7 +49,7 @@ export class PrediccionComponent implements OnInit {
         data[element.name] = element.data
       }
     });
-    console.log(data)
+    
     this.predictionService.predict(data, this.loginService.getToken()).subscribe(
       response => {
         console.log(response)

@@ -1,10 +1,17 @@
 <h5 class="pt-3 pl-2 pb-3">Predicción</h5>
-
-<div style="width: 50%; height: 100%;display: flex; flex-direction: column; align-items: flex-start;">
-    <label *ngFor="let column of columns" style="width: 100%;">{{column.name}} <input type="text"
-            [(ngModel)]="column.data"></label>
-</div>
-
-<button style="margin-top: 30px;" (click)="obtenPrediccion()">Predecir</button>
-
 <h5 class="pt-3 pl-2 pb-3" style="margin-top: 30px;" *ngIf="prediction!=null">{{prediction}}</h5>
+
+<div class="container-fluid m-0">
+  <div class="row d-flex justify-content-around">
+    <div class="col-6">
+      <label *ngFor="let column of columns" style="width: 100%;">{{column.name}}
+        <input type="text" [(ngModel)]="column.data"></label>
+      <!--<button style="margin-top: 30px;" (click)="obtenPrediccion()">Predecir</button>-->
+      <div>
+        <button type="button" class="btn btn-primary" (click)="obtenPrediccion()">Predecir</button>
+      </div>
+    </div>
+    <div class="col-6">
+      <app-barchart></app-barchart>
+    </div>
+  </div>
