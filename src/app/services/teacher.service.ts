@@ -23,7 +23,7 @@ export class TeacherService {
   addTeacher(data, token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
     return this._http.post(this.url + 'user/teacher', data, { headers: headers }).pipe(map(res => res));
   }
@@ -37,7 +37,7 @@ export class TeacherService {
   editTeacher(pk, data, token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
 
     return this._http.patch(this.url + 'user/teacher/' + pk, data, { headers: headers }).pipe(map(res => res));
@@ -51,7 +51,7 @@ export class TeacherService {
   getTeacher(pk, token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
     return this._http.get(this.url + 'user/teacher/' + pk, { headers: headers }).pipe(map(res => res));
   }
@@ -64,7 +64,7 @@ export class TeacherService {
   deleteTeacher(pk, token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
     return this._http.delete(this.url + 'user/teacher/' + pk, { headers: headers }).pipe(map(res => res));
   }
@@ -76,7 +76,7 @@ export class TeacherService {
   getTeachers(token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': token
+      'Authorization': 'Token ' + token
     })
     return this._http.get(this.url + 'user/teacher', { headers: headers }).pipe(map(res => res));
   }
