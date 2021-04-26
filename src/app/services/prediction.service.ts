@@ -19,7 +19,7 @@ export class PredictionService {
       'Content-Type': 'application/json',
       'Authorization': 'Token ' + token
     })
-    return this._http.get(this.url + 'prediction/columns', { headers: headers }).pipe(map(res => res));
+    return this._http.get(this.url + 'prediction/columns', { headers: headers }).pipe(map(res => res)); //get -> post , columns -> fit 
   }
   predict(data, token): Observable<any> {
     let headers = new HttpHeaders({

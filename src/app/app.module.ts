@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BarchartComponent } from './components/barchart/barchart.component';
+import { CircleprogressComponent } from './components/circleprogress/circleprogress.component';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { BarchartComponent } from './components/barchart/barchart.component';
     AlgoritmoComponent,
     PrediccionComponent,
     BarchartComponent,
+    CircleprogressComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { BarchartComponent } from './components/barchart/barchart.component';
     routing,
     NgbModule,
     FontAwesomeModule,
-    ChartsModule
+    ChartsModule,
+    RoundProgressModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
