@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BarchartComponent } from './components/barchart/barchart.component';
+import { ProfesoresComponent } from './components/profesores/profesores.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { BarchartComponent } from './components/barchart/barchart.component';
     AlgoritmoComponent,
     PrediccionComponent,
     BarchartComponent,
+    ProfesoresComponent,
   ],
   imports: [
     BrowserModule,
