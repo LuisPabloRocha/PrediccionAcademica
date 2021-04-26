@@ -17,8 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BarchartComponent } from './components/barchart/barchart.component';
+<<<<<<< HEAD
 import { CircleprogressComponent } from './components/circleprogress/circleprogress.component';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+=======
+import { ProfesoresComponent } from './components/profesores/profesores.component';
+>>>>>>> aba8d4ddbc5732e989daea1ac663f6b20d004035
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     AlgoritmoComponent,
     PrediccionComponent,
     BarchartComponent,
+<<<<<<< HEAD
     CircleprogressComponent,
+=======
+    ProfesoresComponent,
+>>>>>>> aba8d4ddbc5732e989daea1ac663f6b20d004035
   ],
   imports: [
     BrowserModule,
