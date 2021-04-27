@@ -5,26 +5,33 @@
     </div>
     <div class="list-group list-group-flush pt-3">
       <h6 style="padding-left: 20px; padding-bottom:10px; color: gray;">Navegación</h6>
-      <a [routerLink]="['home']" class="list-group-item list-group-item-action bg-light">
+      <a [routerLink]="['home']" class="list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==1||loginService.user.role==2)">
         <fa-icon [icon]="faHome"></fa-icon> Inicio
       </a>
-      <a [routerLink]="['alumnos']" class="list-group-item list-group-item-action bg-light">
+      <a [routerLink]="['alumnos']" class="list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==1)">
         <fa-icon [icon]="faUserFriends"></fa-icon> Alumnos
       </a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">
+      <a href="#" class="list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==-2)">
         <fa-icon [icon]="faChalkboardTeacher"></fa-icon> Materias
       </a>
-      <a [routerLink]="['profesores']" class="list-group-item list-group-item-action bg-light">
+      <a [routerLink]="['profesores']" class="list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==1)">
         <fa-icon [icon]="faBookReader"></fa-icon> Profesores
       </a>
-      <a [routerLink]="['prediccion']" class="list-group-item list-group-item-action bg-light">
+      <a [routerLink]="['prediccion']" class="list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==1||loginService.user.role==2)">
         <fa-icon [icon]="faBrain"></fa-icon> Predicción
       </a>
       <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-        class="dropdown-toggle list-group-item list-group-item-action bg-light">
+        class="dropdown-toggle list-group-item list-group-item-action bg-light" *ngIf="
+    loginService.user!=null&&(loginService.user.role==-2)">
         <fa-icon [icon]="faNetworkWired"></fa-icon> Algoritmos
       </a>
-      <ul class="collapse list-unstyled" id="pageSubmenu">
+      <ul class="collapse list-unstyled" id="pageSubmenu" *ngIf="
+    loginService.user!=null&&(loginService.user.role==1)">
         <li>
           <a [routerLink]="['algoritmo/1']" class="list-group-item list-group-item-action bg-light">Random Forest</a>
         </li>
