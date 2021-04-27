@@ -23,22 +23,51 @@ export class SidebarComponent implements OnInit {
   faUserFriends = faUserFriends;
   faBookReader = faBookReader;
   faNetworkWired = faNetworkWired;
+  public user = {
+    /**Nombre de usuario */
+    "username": "",
+    /**Nombre */
+    "first_name": "",
+    /**Apellido */
+    "last_name": "",
+    /**Rol */
+    "role": -1
+  }
 
   constructor(
-    private loginService: LoginService,
+    public loginService: LoginService,
     private router: Router
   ) { }
 
   title = 'angularbootstrap';
   ngOnInit() {
+    this.obtenDatosUsuario()
+    this.inicializaUsuario()
     $("#menu-toggle").click(function (e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   }
 
+  /**
+   * Función para inicializar
+   */
+  inicializaUsuario() {
+    this.user = {
+      /**Nombre de usuario */
+      "username": "",
+      /**Nombre */
+      "first_name": "",
+      /**Apellido */
+      "last_name": "",
+      /**Rol */
+      "role": -1
+    }
+  }
+
   cerrarSesion() {
     this.loginService.clearToken()
+    this.loginService.clearUser()
     this.loginService.session = false;
     this.router.navigateByUrl('/login')
     // this.loginService.logOut(this.loginService.getToken()).subscribe(
@@ -50,5 +79,18 @@ export class SidebarComponent implements OnInit {
 
     //   }
     // )
+  }
+
+  /**
+ * Función para obtener los datos del usuario
+ */
+  obtenDatosUsuario() {
+    this.loginService.whoAmI(this.loginService.getToken()).subscribe(
+      response => {
+        console.log(response)
+        this.loginService.setUser(response)
+      },
+      error => { console.log(error) }
+    )
   }
 }
