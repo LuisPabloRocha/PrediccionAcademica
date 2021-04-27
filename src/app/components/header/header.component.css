@@ -1,5 +1,4 @@
-
-#header {
+.header{
     background: rgb(27,50,87);
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -7,6 +6,14 @@
     align-items: center;
     position: fixed;
     height: 100px !important;
+}
+
+.header-login {
+    background-color: rgb(27,50,87);
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .center{
