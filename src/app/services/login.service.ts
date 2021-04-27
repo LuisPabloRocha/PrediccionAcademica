@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
   private url: string;
   public session: boolean;
+  public user: any;
 
   constructor(private _http: HttpClient) {
     this.url = environment.url;
@@ -43,6 +44,19 @@ export class LoginService {
   }
 
   /**
+   * Función para obtener los datos del usuario
+   * @param token Token del usuario logeado
+   * @returns Datos del usuario
+   */
+  whoAmI(token): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Token ' + token
+    })
+    return this._http.get(this.url + 'auth//auth/whoami', { headers: headers }).pipe(map(res => res));
+  }
+
+  /**
   * Función para obtener el token del usuario del sessionStorage
   * @returns "token"
   */
@@ -65,5 +79,31 @@ export class LoginService {
     //Borramos el token del usuario del sessionStorage
     sessionStorage.removeItem('token');
   }
-  
+  /**
+  * Función para obtener los datos del usuario del sessionStorage
+  * @returns "user"
+  */
+  getUser() {
+    //Obtenemos los datos del usuario del sessionStorage
+    return JSON.parse(sessionStorage.getItem('user'))
+  }
+  /**
+  * Función para guardar los datos del usuario en el sessionStorage
+  * @param user User del usuario
+  */
+  setUser(user) {
+    this.user = user
+    console.log(this.user)
+    //Guardamos los datos del usuario en el sessionStorage
+    sessionStorage.setItem('user', JSON.stringify(user));
+  }
+  /**
+   * Función para eliminar los datos del sesión storage
+   */
+  clearUser() {
+    this.user = null
+    //Borramos los datos del usuario del sessionStorage
+    sessionStorage.removeItem('user');
+  }
+
 }
