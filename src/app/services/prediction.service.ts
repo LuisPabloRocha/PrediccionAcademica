@@ -28,4 +28,11 @@ export class PredictionService {
     })
     return this._http.post(this.url + 'prediction/predict', data, { headers: headers }).pipe(map(res => res));
   }
+  fit(token): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Token ' + token
+    })
+    return this._http.post(this.url + 'prediction/fit', { headers: headers }).pipe(map(res => res));
+  }
 }
