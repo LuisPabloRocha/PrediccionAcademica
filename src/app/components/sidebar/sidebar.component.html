@@ -1,70 +1,69 @@
-<div class="d-flex" id="wrapper">
-  <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading" style="background-color: white;">
-      <h5>Predicción Academica</h5>
-    </div>
-    <div class="list-group list-group-flush pt-3">
-      <h6 style="padding-left: 20px; padding-bottom:10px; color: gray;">Navegación</h6>
-      <a [routerLink]="['home']" class="list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faHome"></fa-icon> Inicio
-      </a>
-      <a [routerLink]="['alumnos']" class="list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faUserFriends"></fa-icon> Alumnos
-      </a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faChalkboardTeacher"></fa-icon> Materias
-      </a>
-      <a [routerLink]="['profesores']" class="list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faBookReader"></fa-icon> Profesores
-      </a>
-      <a [routerLink]="['prediccion']" class="list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faBrain"></fa-icon> Predicción
-      </a>
-      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-        class="dropdown-toggle list-group-item list-group-item-action bg-light">
-        <fa-icon [icon]="faNetworkWired"></fa-icon> Algoritmos
-      </a>
-      <ul class="collapse list-unstyled" id="pageSubmenu">
-        <li>
-          <a [routerLink]="['algoritmo/1']" class="list-group-item list-group-item-action bg-light">Random Forest</a>
-        </li>
-        <li>
-          <a [routerLink]="['algoritmo/2']" class="list-group-item list-group-item-action bg-light">J-48</a>
-        </li>
-        <li>
-          <a [routerLink]="['algoritmo/3']" class="list-group-item list-group-item-action bg-light">KNN</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div id="page-content-wrapper" style="background-color: rgb(230, 228, 228);">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-      <button class="boton-menu" id="menu-toggle">
-        <fa-icon [icon]="faBars"></fa-icon>
-      </button>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item" style="cursor: pointer;">
-            <a class="nav-link" (click)="cerrarSesion()">Cerrar Sesión</a>
+<div class="cuerpo" style="position: relative; padding-top: 100px;">
+  <div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading" style="background-color: white;">
+        <h5>Predicción Academica</h5>
+      </div>
+      <div class="list-group list-group-flush pt-3">
+        <h6 style="padding-left: 20px; padding-bottom:10px; color: gray;">Navegación</h6>
+        <a [routerLink]="['home']" class="list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faHome"></fa-icon> Inicio
+        </a>
+        <a [routerLink]="['alumnos']" class="list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faUserFriends"></fa-icon> Alumnos
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faChalkboardTeacher"></fa-icon> Materias
+        </a>
+        <a [routerLink]="['profesores']" class="list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faBookReader"></fa-icon> Profesores
+        </a>
+        <a [routerLink]="['prediccion']" class="list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faBrain"></fa-icon> Predicción
+        </a>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+          class="dropdown-toggle list-group-item list-group-item-action bg-light">
+          <fa-icon [icon]="faNetworkWired"></fa-icon> Algoritmos
+        </a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a [routerLink]="['algoritmo/1']" class="list-group-item list-group-item-action bg-light">Random Forest</a>
           </li>
-
+          <li>
+            <a [routerLink]="['algoritmo/2']" class="list-group-item list-group-item-action bg-light">J-48</a>
+          </li>
+          <li>
+            <a [routerLink]="['algoritmo/3']" class="list-group-item list-group-item-action bg-light">KNN</a>
+          </li>
         </ul>
       </div>
-    </nav>
-
-    <div class="container-fluid">
-      <router-outlet></router-outlet>
+    </div>
+  
+  
+    <div id="page-content-wrapper" style="background-color: rgb(230, 228, 228)">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="boton-menu" id="menu-toggle">
+          <fa-icon [icon]="faBars"></fa-icon>
+        </button>
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item" style="cursor: pointer;">
+              <a class="nav-link" (click)="cerrarSesion()">Cerrar Sesión</a>
+            </li>
+  
+          </ul>
+        </div>
+      </nav>
+  
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-
-
 </div>

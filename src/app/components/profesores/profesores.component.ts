@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { TeacherService } from 'src/app/services/teacher.service';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profesores',
@@ -8,6 +9,8 @@ import { TeacherService } from 'src/app/services/teacher.service';
   styleUrls: ['./profesores.component.css']
 })
 export class ProfesoresComponent implements OnInit {
+  public isCollapsed = true;
+  public faUserPlus = faUserPlus;
   /**Variable para guardar los datos de un nuevo profesor */
   public profesor = {
     /**Nombre de usuario */
@@ -78,6 +81,7 @@ export class ProfesoresComponent implements OnInit {
         response => {
           this.inicializaVariables()
           this.obtenProfesores();
+          this.isCollapsed = true;
         },
         error => {
           console.log(error);

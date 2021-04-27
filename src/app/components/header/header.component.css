@@ -1,8 +1,12 @@
 
 #header {
-    width: 100%;
     background: rgb(27,50,87);
     border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 100px !important;
 }
 
 .center{
@@ -15,33 +19,27 @@
     float:none;
 }
 
-#brand {
+#uaslp{
     display: block;
     margin: 0px;
     margin-top: 20px;
     margin-bottom: 25px;
     float: left;
-    font-size: 25px;
+    font-size: 4.0vh;
     color: white;
 }
-
 #menu{
     float:left;
-    font-size: 18px;
 }
-
 #logo {
-    width: 40%;
+    width: 100%;
     font-size: 30px;
     float: left;
-    margin-top: 14px;
 }
-
 #logo img {
     display: block;
     float: left;
     height: 80px;
-    margin-top: -5px;
     margin-bottom: 5px;
     margin-right: 10px;
 }
@@ -60,6 +58,9 @@
     .center{
         width: 90%;
     }
+    #uaslp{
+        font-size: 2.0vw;
+    }
 }
 
 @media (max-width: 881px){
@@ -70,16 +71,25 @@
     #header{
         min-height: 130px;
         overflow:hidden;
+    }  
+    #logo {
+        width: 100%;
+        font-size: 10px;
+        float: left;
+        padding-bottom: 20px;
     }
-    #brand {
-        margin: 0px;
-        justify-content: right;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-    
-    #logo img{
+    #logo img {
+        display: block;
+        float: left;
+        height: 60px;
+        margin-bottom: 5px;
         margin-top: 10px;
+        margin-right: 10px;
+    }
+    #uaslp{
+
+        font-size: 2.0vh;
+        color: white;
     }
 }
 
@@ -88,15 +98,9 @@
         min-height: 130px;
         overflow:hidden;
     }
-    
-    #brand {
-    margin: 0px;
-    justify-content: right;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    }
-
-    #logo img{
-        margin-top: 10px;
+    #logo {
+        width: 100%;
+        font-size: 30px;
+        float: left;
     }
 }

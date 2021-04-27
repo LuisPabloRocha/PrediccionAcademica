@@ -7,3 +7,50 @@
 .container-fluid{
     width: 100%; 
 }
+
+.boton-gral{
+    background-color: rgb(27, 50, 87); 
+    border: none;
+    color: whitesmoke;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 50px;
+}
+
+.boton-gral:hover{
+    background-color: gainsboro; 
+    color: black;
+}
+.boton-gral {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.boton-add{
+    border: none;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius:  50px;
+    border:1.5px solid #008f39 !important ;
+    background-color: white;
+    color: #008f39;
+}
+
+.boton-add:hover{
+    background-color: #008f39; 
+    color: white;
+}
+.boton-add {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
