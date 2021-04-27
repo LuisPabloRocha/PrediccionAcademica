@@ -37,13 +37,13 @@ export class LoginComponent implements OnInit {
   inicializaUsuario() {
     this.user = {
       /**Nombre de usuario */
-      "username": "admin",
+      "username": "",
       /**Nombre */
       "first_name": "",
       /**Apellido */
       "last_name": "",
       /**Contraseña */
-      "password": "nachoraul123"
+      "password": ""
     }
   }
 
