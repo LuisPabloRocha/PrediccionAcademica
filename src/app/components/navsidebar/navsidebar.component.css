@@ -1,0 +1,180 @@
+.navbar{
+  display: inline;
+}
+#header{
+  background-color: rgb(27, 58, 87);
+  height: 90px;
+}
+
+#logo{
+  margin-left: 60px;
+}
+
+#logo img {
+  display: block;
+  float: left;
+  height: 80px;
+  margin-bottom: 5px;
+}
+
+#uaslp{
+  display: block;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  float: left;
+  font-size: 4.0vh;
+  color: white;
+}
+.nav a{
+  background-color:  rgb(240, 240, 240);
+}
+.nav a:hover{
+  border-right: 3px solid rgb(27, 58, 87);
+  background-color: white;
+}
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+  
+#sidebar-wrapper {
+  margin-left: -250px;
+  top: 90px;
+  left: 250px;
+  width: 250px;
+  background-color: rgb(240, 240, 240);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#wrapper.active {
+  padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 0;
+}
+
+#page-content-wrapper {
+  min-width: 80vw;
+  padding-top: 90px;
+  transition: all 0.4s ease 0s;
+}
+
+.hey{
+
+  height: 3px;
+  background: rgb(255,207,105);
+  background: linear-gradient(90deg, rgba(255,207,105,1) 12%, rgba(226,205,124,1) 32%, rgba(34,193,248,1) 59%, rgba(140,149,217,1) 86%);
+}
+
+.nav-item fa-icon{
+  padding-right: 10px;
+}
+
+#menu-toggle {
+    text-decoration: none;
+    float: left;
+    color: #fff;
+    padding-right: 15px;
+}
+
+@media (max-width:767px) {
+
+#wrapper {
+  padding-left: 0;
+}
+
+#sidebar-wrapper {
+  left: 0;
+}
+
+#wrapper.active {
+  position: relative;
+  left: 250px;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#menu-toggle {
+  display: inline-block;
+}
+}
+
+.navbar-fixed-top
+{
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/*Desde la anchura 963px hasta la anchura 1488px de pantalla*/
+@media (max-width: 1488px){
+  /*Se ejecutarán estos estilos*/
+  .center{
+      width: 85%;
+  }
+}
+
+/*Desde la anchura 0px hasta la anchura 963px de pantalla*/
+@media (max-width: 1314px){
+  .center{
+      width: 90%;
+  }
+  #uaslp{
+      font-size: 2.0vw;
+  }
+  
+}
+
+@media (max-width: 881px){
+ 
+}
+
+@media (max-width: 813px){
+  #header{
+      overflow:hidden;
+  }  
+  #logo {
+      width: 100%;
+      font-size: 10px;
+      float: left;
+      padding-bottom: 20px;
+      margin-left: 10px;
+  }
+  #logo img {
+      display: block;
+      float: left;
+      height: 60px;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      margin-right: 10px;
+  }
+  #uaslp{
+
+      font-size: 2.0vh;
+      color: white;
+  }
+}
+
+@media (max-width: 497px){
+  #header{
+      overflow:hidden;
+  }
+  #logo {
+      width: 100%;
+      font-size: 30px;
+      float: left;
+      margin-left: 10px;
+  }
+}
+

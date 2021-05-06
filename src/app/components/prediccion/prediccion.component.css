@@ -45,7 +45,7 @@ p{
     color: black;
 }
 .boton {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .progress-bar{
     color: black;
@@ -54,6 +54,7 @@ p{
     color: black;
 }
 .progress h6{
+    font-size: 15px;
     margin-top: 5px;
 }
 .probabilidad{
@@ -65,7 +66,7 @@ p{
 }
 
 .barra2{
-    background-color: rgb(34,193,248);
+    background-color: rgb(34, 193, 248);
 }
 
 .barra3{
@@ -79,3 +80,6 @@ p{
 .barra5{
     background-color: rgb(155, 104, 237);
 }
+
+
+

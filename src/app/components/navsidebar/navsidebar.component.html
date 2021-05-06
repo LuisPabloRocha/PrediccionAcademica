@@ -1,0 +1,76 @@
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div id="wrapper">
+    <nav class="navbar navbar-fixed-top" role="navigation" id="header">
+        <div class="d-flex align-items-start" id="logo">
+            <img src="assets/images/Escudo.png" class="app-logo" alt="Logotipo" />
+            <span id="uaslp" style="float: left;">
+                Área de Ciencias de la <strong>Computación</strong>
+            </span>
+        </div>
+    </nav>
+    <!-- SIDEBAR -->
+    <div id="sidebar-wrapper">
+        <nav id="spy mt-4">
+            <!--CARD USUARIO-->
+            <div class="py-4 px-3 bg-light">
+                <div class="media d-flex align-items-center"><img
+                        src="https://nanocohybri.inc.uam.es/wp-content/uploads/2017/11/icon-user-default.png" alt="..."
+                        width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                    <div class="media-body mt-3">
+                        <h6 class="m-0">{{loginService.user.first_name}} {{loginService.user.last_name}} </h6>
+                        <p class="font-weight-light text-muted mb-0" *ngIf="loginService.user!=null&&(loginService.user.role==1)"><small>Administrador</small> </p>
+                        <p class="font-weight-light text-muted mb-0" *ngIf="loginService.user!=null&&(loginService.user.role==2)"><small>Profesor</small></p>
+                        <p class=""><a href="#" (click)="cerrarSesion()"><h6><small>Cerrar Sesión</small></h6></a></p>  
+                    </div>
+                </div>
+            </div>
+            <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0 mt-4">Navegación</p>
+            <ul class="nav flex-column bg-white mb-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark"  
+                    *ngIf="loginService.user!=null&&(loginService.user.role==1||loginService.user.role==2)">
+                    <fa-icon [icon]="faHome"></fa-icon>Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLink]="['prediccion']" class="nav-link text-dark "
+                    *ngIf="loginService.user!=null&&(loginService.user.role==1||loginService.user.role==2)">
+                    <fa-icon [icon]="faBrain"></fa-icon>Predicción
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  [routerLink]="['profesores']" class="nav-link text-dark "
+                    *ngIf="loginService.user!=null&&(loginService.user.role==1)">
+                    <fa-icon [icon]="faBookReader"></fa-icon>Profesores
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- Page content -->
+    <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row" style="background-color: rgb(240, 240, 240);;">
+                    <div class="col-md-12">
+                        <div class="navbar-brand">
+                            <a id="menu-toggle" href="#" style="color: black">
+                                <fa-icon [icon]="faBars"></fa-icon>
+                            </a>
+                        </div>
+                    </div>               
+                </div>
+                <div class="row hey">
+
+                </div>
+                <router-outlet></router-outlet> 
+            </div>
+        </div>
+    </div>
+
+    
+</div>

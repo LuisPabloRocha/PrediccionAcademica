@@ -20,6 +20,7 @@ import { BarchartComponent } from './components/barchart/barchart.component';
 import { CircleprogressComponent } from './components/circleprogress/circleprogress.component';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { ProfesoresComponent } from './components/profesores/profesores.component';
+import { NavsidebarComponent } from './components/navsidebar/navsidebar.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ProfesoresComponent } from './components/profesores/profesores.componen
     BarchartComponent,
     CircleprogressComponent,
     ProfesoresComponent,
+    NavsidebarComponent,
   ],
   imports: [
     BrowserModule,
