@@ -1,2 +1,116 @@
-<h5 class="pt-3 pl-2">Algoritmo</h5>
+<h5 class="pt-3 pl-2 pb-3 lead">Algoritmos</h5>
+<div id="page-content-wrapper">
+    <div class="page-content ml-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <div class="d-flex justify-content-start">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-ann-tab" data-toggle="pill" href="#pills-ann"
+                                    role="tab" aria-controls="pills-ann" aria-selected="true">ANN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-rf-tab" data-toggle="pill" href="#pills-rf" role="tab"
+                                    aria-controls="pills-rf" aria-selected="false">Random Forest</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-nv-tab" data-toggle="pill" href="#pills-nv" role="tab"
+                                    aria-controls="pills-nv" aria-selected="false">Naive Bayes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-svm-tab" data-toggle="pill" href="#pills-svm" role="tab"
+                                    aria-controls="pills-svm" aria-selected="false">SVM</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-j48-tab" data-toggle="pill" href="#pills-j48" role="tab"
+                                    aria-controls="pills-j48" aria-selected="false">J-48</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content mt-3" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-ann" role="tabpanel"
+                            aria-labelledby="pills-ann-tab">
+                            <div class="container clasificador mb-5">
+                                <h5 class="pt-4">ANN (Artificial Neuronal Network)</h5>
+                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">Una red neuronal es un modelo simplificado que
+                                        emula el modo en que el
+                                        cerebro humano procesa la información:
+                                        Funciona simultaneando un número elevado de unidades de procesamiento
+                                        interconectadas que parecen versiones abstractas de neuronas.
+                                    </p>
+                                </div>
+                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <!--CONFIGURACIÓN DE PARAMETROS-->
+                               <app-parametros></app-parametros>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-rf" role="tabpanel" aria-labelledby="pills-rf-tab">
+                            <div class="container clasificador mb-5">
+                                <h5 class="pt-4">Random Forest</h5>
+                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">Random Forest is an improvement upon bagged decision trees that disrupts the 
+                                        greedy splitting algorithm during tree creation so that split points can only be selected from a random subset 
+                                        of the input attributes. This simple change can have a big effect decreasing the similarity between the bagged trees 
+                                        and in turn the resulting predictions.
+                                    </p>
+                                </div>
+                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <!--CONFIGURACIÓN DE PARAMETROS-->
+                               <app-parametros></app-parametros>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-nv" role="tabpanel" aria-labelledby="pills-nv-tab">
+                            <div class="container clasificador mb-5">
+                                <h5 class="pt-4">Naive Bayes</h5>
+                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">Naive Bayes uses a simple implementation of Bayes Theorem (hence naive) where the prior probability 
+                                        for each class is calculated from the training data and assumed to be independent of 
+                                        each other (technically called conditionally independent).
+                                    </p>
+                                </div>
+                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <!--CONFIGURACIÓN DE PARAMETROS-->
+                               <app-parametros></app-parametros>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-svm" role="tabpanel" aria-labelledby="pills-svm-tab">
+                            <div class="container clasificador mb-5">
+                                <h5 class="pt-4">SVM (Support Vector Machine)</h5>
+                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">SVM work by finding a line that best separates the data into the two groups. 
+                                        This is done using an optimization process that only considers those data instances in the training dataset that are 
+                                        closest to the line that best separates the classes. The instances are called support vectors, hence the name of the technique.
+                                    </p>
+                                </div>
+                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <!--CONFIGURACIÓN DE PARAMETROS-->
+                               <app-parametros></app-parametros>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-j48" role="tabpanel" aria-labelledby="pills-j48-tab">
+                            <div class="container clasificador mb-5">
+                                <h5 class="pt-4">J-48</h5>
+                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">It is an algorithm to generate a decision tree that is generated by C4.5 (an extension of ID3). 
+                                        It is also known as a statistical classifier. For decision tree classification, we need a database.
+                                    </p>
+                                </div>
+                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <!--CONFIGURACIÓN DE PARAMETROS-->
+                               <app-parametros></app-parametros>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+            </div>
+        </div>
+    </div>

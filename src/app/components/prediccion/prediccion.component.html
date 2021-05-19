@@ -6,46 +6,46 @@
       <div class="container-fluid">
         <div class="row">
           <!-- COLUMNA IZQUIERDA ATRIBUTOS A LLENAR POR EL USUARIO -->
-          <div class="col-lg-3 mb-4">
-            <h6 class="mb-4"><strong>Atributos</strong></h6>
+          <div class="col-lg-5 mb-4">
+            <h6 class="mb-4"><strong>ATRIBUTOS</strong></h6>
             <!--CICLO DE IMPRESIÓN DE ATRIBUTOS (BACKEND)-->
             <div class="row" *ngFor="let column of columns">
-              <div class="col-sm-3">
-                <label data-toggle="tooltip" style="width: 100%;"><small>{{column.name}}</small></label>
+              <div class="col-sm-7">
+                <label style="width: 100%;"><small>{{column.description}}</small></label>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-5">
                 <div class="input-group input-group-sm mb-2">
-                  <input type="text" *ngIf="column.ranges[1]!=1" [ngbTooltip]="tipContent" class="form-control"
+                  <input type="text" *ngIf="column.ranges[1]!=1"  class="form-control"
                     [(ngModel)]="column.data" placeholder="{{column.ranges}}" />
-                  <input type="text" *ngIf="column.ranges[1]==1" [ngbTooltip]="tipContent" class="form-control"
+                  <input type="text" *ngIf="column.ranges[1]==1"  class="form-control"
                     [(ngModel)]="column.data" placeholder="{{column.ranges[1]}}-{{column.ranges.length-1}}" />
                 </div>
               </div>
-              <ng-template #tipContent>{{column.description}}<b>{{name}}</b></ng-template>
+              
             </div>
             <div class="d-flex justify-content-end mt-2">
               <button class="boton" (click)="obtenPrediccion()">Predecir</button>
             </div>
           </div>
           <!--COLUMNA DERECHA RESULTADOS DE PREDICCIÓN-->
-          <div class="col-lg-8 mb-5" *ngIf="prediction!=null">
-            <h6 class="mb-4"><strong>Resultado</strong></h6>
+          <div class="col-lg-7 mb-5" *ngIf="prediction!=null">
+            <h6 class="mb-4"><strong>RESULTADO</strong></h6>
             <div class="row">
               <!--CARD DE RESULTADO GENERAL-->
               <div class="col-md">
-                <div class="mb-3 shadow-lg p-2 mb-4 bg-white rounded " id="card-general">
+                <div class="shadow-lg p-2 mb-3 bg-white rounded " id="card-general">
                   <div class="card-content">
                     <div class="card-body">
-                      <div class="media">
+                      <div class="rendimiento">
                         <div class="row">
-                          <div class="col-md-8 ml-4 mr-2">
+                          <div class="col-md-7 ml-4 mr-2">
                             <div class="row">
                               <h4>Rendimiento General</h4>
                             </div>
                             <div class="row">
-                              <p><small>Probabilidad de aprobar Estructuras de Datos II</small></p>
+                              <p><small>Posibilidad de aprobar Estructuras de Datos II</small></p>
                             </div>
-                            <div class="row">
+                            <div class="row mt-3">
                               <div class="d-flex mb-3">
                                 <div class="probabilidad p-2 otra" [ngClass]="{'alta': promedio > 66 }"
                                   style="border-radius: 7px 0px 0px 7px !important; ">Alta</div>
@@ -54,11 +54,6 @@
                                 <div class="probabilidad p-2 otra" [ngClass]="{'baja': promedio < 33 }"
                                   style="border-radius: 0px 7px 7px 0px !important;">Baja</div>
                               </div>
-                            </div>
-                            <div class="row">
-                              <h6><small style="font-size: 11px;">*Resultado basado en la probabilidad de los algoritmos
-                                  con regresión de porcentaje</small></h6>
-                              <h6><small style="font-size: 11px;">*Promedio redondeado</small></h6>
                             </div>
                           </div>
                           <div class="progress-wrapper">
@@ -72,74 +67,90 @@
                 </div>
               </div>
             </div>
-            <div class="div mb-4">
-              <h6 class="mb-4"><strong>Resultado por algoritmo</strong></h6>
-            </div>
+            <div class="separator mb-3"><h6><small><strong> RESULTADO POR ALGORITMO </strong> </small></h6></div>
             <div class="row">
               <div class="col-sm-3">
-                <h5><small>ANN</small></h5>
+                <h6><small>ANN</small></h6>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-1">
+                <h6 ><small><strong>SI</strong></small></h6>
+              </div>
+              <div class="col-sm-8">
                 <div class="progress">
                   <div class="progress-bar barra1" role="progressbar" [style.width.%]="widthANN" aria-valuenow="width2"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.ANN.SI|
-                        percent: '2.1-3'}}</small></h6>
+                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.ANN.SI*100 | number : '1.0-4'}}</small></h6>
                   </div>
                 </div>
               </div>
             </div>
+            <hr class="dotted">
             <div class="row">
               <div class="col-sm-3">
-                <h5><small>Random Forest</small></h5>
+                <h6><small>Random Forest</small></h6>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-1">
+                <h6 ><small><strong>SI</strong></small></h6>
+              </div>
+              <div class="col-sm-8">
                 <div class="progress">
                   <div class="progress-bar barra2" role="progressbar" [style.width.%]="widthRF" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
                     <h6 class="justify-content-center d-flex position-absolute w-100">
-                      <small>{{prediction.RandomForest.SI| percent: '2.1-3'}}</small></h6>
+                      <small>{{prediction.RandomForest.SI*100 | number : '1.0-2'}}</small></h6>
                   </div>
                 </div>
               </div>
             </div>
+            <hr class="dotted">
             <div class="row">
               <div class="col-sm-3">
-                <h5><small>Naive Bayes</small></h5>
+                <h6><small>Naive Bayes</small></h6>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-1">
+                <h6 ><small><strong>SI</strong></small></h6>
+              </div>
+              <div class="col-sm-8">
                 <div class="progress">
                   <div class="progress-bar barra3" role="progressbar" [style.width.%]="widthNaive" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.NaiveBayes.SI|
-                        percent: '2.1-3'}}</small></h6>
+                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.NaiveBayes.SI*100 | number : '1.0-4'}}</small></h6>
                   </div>
                 </div>
               </div>
             </div>
+            <hr class="dotted">
             <div class="row">
               <div class="col-sm-3">
-                <h5><small>SVM</small></h5>
+                <h6><small>SVM</small></h6>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-1">
+                <h6 ><small><strong>SI</strong></small></h6>
+              </div>
+              <div class="col-sm-8">
                 <div class="progress">
                   <div class="progress-bar barra5" role="progressbar" [style.width.%]="widthSVM" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.SVM.SI|
-                        percent: '2.1-3'}}</small></h6>
+                    <h6 class="justify-content-center d-flex position-absolute w-100"><small>{{prediction.SVM.SI*100 | number : '1.0-4'}}</small></h6>
                   </div>
                 </div>
               </div>
             </div>
+            <hr class="dotted">
             <div class="row">
               <div class="col-sm-3">
-                <h5><small>J-48</small></h5>
+                <h6><small>J-48</small></h6>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-1">
                 <h6 *ngIf="prediction.Tree.SI==1"><small><strong>SI</strong></small></h6>
                 <h6 *ngIf="prediction.Tree.SI==0"><small><strong>NO</strong></small></h6>
               </div>
+              <div class="col-sm-8">
+               
+              </div>
+             
             </div>
+            <hr class="dotted">
           </div>
         </div>
       </div>

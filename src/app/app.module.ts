@@ -21,6 +21,7 @@ import { CircleprogressComponent } from './components/circleprogress/circleprogr
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { ProfesoresComponent } from './components/profesores/profesores.component';
 import { NavsidebarComponent } from './components/navsidebar/navsidebar.component';
+import { ParametrosComponent } from './components/parametros/parametros.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { NavsidebarComponent } from './components/navsidebar/navsidebar.componen
     CircleprogressComponent,
     ProfesoresComponent,
     NavsidebarComponent,
+    ParametrosComponent,
   ],
   imports: [
     BrowserModule,

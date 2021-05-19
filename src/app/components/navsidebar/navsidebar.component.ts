@@ -7,6 +7,7 @@ import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faBookReader } from '@fortawesome/free-solid-svg-icons';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
+import { faDraftingCompass } from '@fortawesome/free-solid-svg-icons';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 
@@ -23,6 +24,7 @@ export class NavsidebarComponent implements OnInit {
   faUserFriends = faUserFriends;
   faBookReader = faBookReader;
   faNetworkWired = faNetworkWired;
+  faDraftingCompass = faDraftingCompass;
   public user = {
     /**Nombre de usuario */
     "username": "",

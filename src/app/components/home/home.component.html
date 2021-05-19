@@ -1,73 +1,120 @@
-<h5 class="pt-3 pl-2 pb-3">Tablero</h5>
-<section id="content" style="display: none;">
-    <div class="row">
-        <div class="col">
-            <div class="card" id="cartas">
+<h5 class="pt-3 pl-2 pb-3 lead">Inicio</h5>
+
+<div id="page-content-wrapper">
+  <div class="page-content ml-3">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="d-flex flex-column">
+              <div class="shadow-lg pl-3 mb-3" id="card-home">
                 <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="align-self-center">
-                                <fa-icon [icon]="faChalkboardTeacher" style="color: rgb(34,193,248);"></fa-icon>
+                  <div class="card-body">
+                    <div class="media">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <div class="d-flex flex-column">
+                            <div class="p-1">
+                              <h2>Predicción Academica</h2>
                             </div>
-                            <div class="media-body text-right">
-                                <h3 style="color: rgb(34,193,248);">45</h3>
-                                <span>Asesorados</span>
+                            <div class="p-1">
+                              <p>Esta herramienta te ayuda a predecir si un alumno pasará la materia de Estructura de
+                                Datos II</p>
                             </div>
+                            <div class="p-1">
+                              <div class="d-flex justify-content-start mt-3">
+                                <button [routerLink]="['prediccion']" class="boton-home">Predecir</button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" id="cartas">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="align-self-center">
-                                <fa-icon [icon]="faChalkboardTeacher" style="color: rgb(246,104,185);"></fa-icon>
-                            </div>
-                            <div class="media-body text-right">
-                                <h3 style="color: rgb(246,104,185);">4</h3>
-                                <span>Materias</span>
-                            </div>
+                        <div class="col-sm-3">
+                          <div class="d-flex justify-content-center"><img src="assets/images/Cerebro.png"
+                              class="app-logo" alt="Logotipo" style="width: 180px; height: 180px;" /></div>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card" id="cartas">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="align-self-center">
-                                <fa-icon [icon]="faChalkboardTeacher" style="color: rgb(155,104,237);"></fa-icon>
+            <div class="d-flex flex-column mb-3">
+              <h6 class="pl-2">
+                <strong>ACERCA DE:</strong>
+              </h6>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="shadow-lg pl-3 mb-3" id="card-home">
+                    <div class="card-content">
+                      <div class="card-body">
+                        <div class="media">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="d-flex flex-column">
+                                <div class="p-1">
+                                  <h6>¿Por qué ED II?</h6>
+                                </div>
+                                <div class="p-1">
+                                  <p>Estructura de Datos II es una de las materias que tienen un alto índice de
+                                    reprobación dentro del Áre de Ciencias de la Computación.</p>
+                                </div>
+                              </div>
                             </div>
-                            <div class="media-body text-right">
-                                <h3 style="color: rgb(155,104,237);">4</h3>
-                                <span>Materias</span>
-                            </div>
+                          </div>
+
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" id="cartas">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="align-self-center">
-                                <fa-icon [icon]="faChalkboardTeacher" style="color: rgb(255,207,105);"></fa-icon>
+                <div class="col-sm-6">
+                  <div class="shadow-lg pl-3 mb-3" id="card-home" style="background: black; color: white;">
+                    <div class="card-content">
+                      <div class="card-body">
+                        <div class="media">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="d-flex flex-column">
+                                <div class="p-1">
+                                  <h6>¿Por qué ED II?</h6>
+                                </div>
+                                <div class="p-1">
+                                  <p>Estructura de Datos II es una de las materias que tienen un alto índice de
+                                    reprobación</p>
+                                </div>
+                              </div>
                             </div>
-                            <div class="media-body text-right">
-                                <h3 style="color: rgb(255,207,105);">4</h3>
-                                <span>Materias</span>
-                            </div>
+                          </div>
+
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="shadow-lg p-2 mb-3 " id="card-home">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="row">
+                      <div class="col-md-7 ml-4 mr-2">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
     </div>
-</section>
+  </div>
+</div>

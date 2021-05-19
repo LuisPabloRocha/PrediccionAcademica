@@ -1,6 +1,7 @@
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: gray;
     opacity: 0.7; 
+    font-size: 12px;
 }
 p{
   text-align:center;
@@ -36,9 +37,31 @@ p{
     color: white;
 }
 #card-general{
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     background-color: red; 
 }
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+  
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid gainsboro;
+}
+  
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+  
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
 
 .boton:hover{
     background-color: gainsboro; 

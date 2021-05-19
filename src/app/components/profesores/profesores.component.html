@@ -9,7 +9,7 @@
                     <form>
                         <div class="row">
                             <div class="col-sm d-flex justify-content-start mt-3">
-                                <input type="text" class="form-control" name="search" [(ngModel)]="busqueda"
+                                <input type="text" class="form-control busqueda" name="search" [(ngModel)]="busqueda"
                                     (ngModelChange)="buscaProfesoresMem()" placeholder="Buscar" />
                             </div>
                             <div class="col-sm d-flex justify-content-end mb-3 mt-3">
@@ -43,7 +43,7 @@
                                             [(ngModel)]="profesor.last_name">
                                     </div>
                                     <div class="col-sm-2 mb-3">
-                                        <h6><small> Nombre de usuario:</small></h6>
+                                        <h6><small>Usuario:</small></h6>
 
                                         <input type="text" name="" id="" class="form-control"
                                             [(ngModel)]="profesor.username">

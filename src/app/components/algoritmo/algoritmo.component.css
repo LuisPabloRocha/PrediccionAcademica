@@ -1,0 +1,80 @@
+.submenu{
+    background-color: gainsboro;
+    padding: 10px 0px 30px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.nav-link{
+    text-decoration: none;
+    margin-top: 10px;
+}
+.nav-pills li{
+    margin-top: 20px;
+}
+.nav-pills a{
+    text-decoration: none;
+    padding: 0px 20px 10px 20px;
+    color: #000;
+    font-size: 14px;
+}
+.nav-pills > li > a.active {
+    background-color: white !important;
+    border-bottom: 2px solid transparent; 
+    border-image: linear-gradient(to left,  rgba(34,193,248,1) 29%, rgba(140,149,217,1) 86%) 1;
+    color: black;
+    font-weight: bold;
+}
+.clasificador{
+    border-radius: 10px;
+ 
+}
+.clasificador h5{
+    color: black;
+}
+.descripcion{
+    font-size: 13px;
+    text-justify: inter-word;
+}
+
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+  
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid gainsboro;
+}
+  
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+  
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+.separator fa-icon{
+    font-size: 20px;
+    padding: 10px 16px 10px 16px;
+    background-color: gainsboro;
+    border-radius: 50%;
+    color: rgb(27, 50, 87); ;
+}
+.config{
+    border-radius: 10px;
+    width: 90%;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: gray;
+}
+.config fa-icon{
+    color: #FFCF69;
+    font-size: 20px;
+    padding-right: 10px;
+}

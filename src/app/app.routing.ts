@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     { path: 'alumnos', component: AlumnosComponent },
     { path: 'profesores', component: ProfesoresComponent },
     { path: 'prediccion', component: PrediccionComponent },
-    { path: 'algoritmo/:idalgoritmo', component: AlgoritmoComponent },
+    { path: 'algoritmos', component: AlgoritmoComponent },
 ];
 
 export const appRoutingProviders: any[] = [];

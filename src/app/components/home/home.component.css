@@ -9,3 +9,30 @@
     font-size: 40px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+#card-home{
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+}
+
+.boton-home{
+    background-color:black;
+    border: none;
+    color: whitesmoke;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 50px;
+}
+
+.boton-home:hover{
+    background-color: gainsboro; 
+    color: black;
+}
+.boton-home {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
