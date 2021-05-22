@@ -50,18 +50,18 @@
                             </div>
                             <div class="row mt-3">
                               <div class="d-flex mb-3">
-                                <div class="probabilidad p-2 otra" [ngClass]="{'alta': promedio > 66 }"
+                                <div class="probabilidad p-2 otra" [ngClass]="{'alta': resPositivo*20 >= 70 }"
                                   style="border-radius: 7px 0px 0px 7px !important; ">Alta</div>
                                 <div class="probabilidad p-2 otra"
-                                  [ngClass]="{'mediap': promedio < 66 && promedio > 33 }">Media</div>
-                                <div class="probabilidad p-2 otra" [ngClass]="{'baja': promedio < 33 }"
+                                  [ngClass]="{'mediap': resPositivo*20 < 70 && resPositivo*20 > 50 }">Media</div>
+                                <div class="probabilidad p-2 otra" [ngClass]="{'baja': resPositivo*20 < 50 }"
                                   style="border-radius: 0px 7px 7px 0px !important;">Baja</div>
                               </div>
                             </div>
                           </div>
                           <div class="progress-wrapper">
                             <!--CIRCULAR PROGRESS BAR-->
-                            <app-circleprogress [promedio]="promedio"></app-circleprogress>
+                            <app-circleprogress [promedio]="resPositivo*20"></app-circleprogress>
                           </div>
                         </div>
                       </div>
@@ -78,7 +78,8 @@
                 <h6><small>ANN</small></h6>
               </div>
               <div class="col-sm-1">
-                <h6><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthANN>=70"><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthANN<70"><small><strong>NO</strong></small></h6>
               </div>
               <div class="col-sm-8">
                 <div class="progress">
@@ -96,7 +97,8 @@
                 <h6><small>Random Forest</small></h6>
               </div>
               <div class="col-sm-1">
-                <h6><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthRF>=70"><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthRF<70"><small><strong>NO</strong></small></h6>
               </div>
               <div class="col-sm-8">
                 <div class="progress">
@@ -115,7 +117,8 @@
                 <h6><small>Naive Bayes</small></h6>
               </div>
               <div class="col-sm-1">
-                <h6><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthNaive>=70"><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthNaive<70"><small><strong>NO</strong></small></h6>
               </div>
               <div class="col-sm-8">
                 <div class="progress">
@@ -133,7 +136,8 @@
                 <h6><small>SVM</small></h6>
               </div>
               <div class="col-sm-1">
-                <h6><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthSVM>=70"><small><strong>SI</strong></small></h6>
+                <h6 *ngIf="widthSVM<70"><small><strong>NO</strong></small></h6>
               </div>
               <div class="col-sm-8">
                 <div class="progress">
