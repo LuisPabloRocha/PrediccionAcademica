@@ -15,20 +15,20 @@ import { Label } from 'ng2-charts';
 export class PrediccionComponent implements OnInit {
   public columns = []
   public prediction;
-  public widthANN : number;
+  public widthANN: number;
   public widthNaive: number;
-  public widthRF : number;
-  public widthSVM : number;
+  public widthRF: number;
+  public widthSVM: number;
   public promedio: number;
 
   constructor(
     private predictionService: PredictionService,
     private loginService: LoginService
-  ) {this.prediction= null}
+  ) { this.prediction = null }
 
   ngOnInit(): void {
-    
-    this.obtenColumnas() 
+
+    this.obtenColumnas()
   }
 
   obtenColumnas() {
@@ -56,12 +56,14 @@ export class PrediccionComponent implements OnInit {
       } else {
         data[element.name] = element.data
       }
+      if (element.name == "numED1")
+        data[element.name] = 1
     });
-    
+
     this.predictionService.predict(data, this.loginService.getToken()).subscribe(
       response => {
         console.log(response)
-        if (response!=null) {
+        if (response != null) {
           this.prediction = response;
           this.estableceWidths();
         }
@@ -70,13 +72,13 @@ export class PrediccionComponent implements OnInit {
     )
   }
 
-  estableceWidths(){
-    this.widthRF = this.prediction.RandomForest.SI*100;
-    this.widthANN = this.prediction.ANN.SI*100;
-    this.widthNaive = this.prediction.NaiveBayes.SI*100;
-    this.widthSVM = this.prediction.SVM.SI*100;
-    let suma  = this.widthRF +  this.widthANN + this.widthNaive + this.widthSVM;
-    this.promedio = Math.round(suma/4);
+  estableceWidths() {
+    this.widthRF = this.prediction.RandomForest.SI * 100;
+    this.widthANN = this.prediction.ANN.SI * 100;
+    this.widthNaive = this.prediction.NaiveBayes.SI * 100;
+    this.widthSVM = this.prediction.SVM.SI * 100;
+    let suma = this.widthRF + this.widthANN + this.widthNaive + this.widthSVM;
+    this.promedio = Math.round(suma / 4);
   }
 
 }
