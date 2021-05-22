@@ -20,7 +20,7 @@
                         src="https://nanocohybri.inc.uam.es/wp-content/uploads/2017/11/icon-user-default.png" alt="..."
                         width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
                     <div class="media-body mt-3">
-                        <h6 class="m-0">{{loginService.user.first_name}} {{loginService.user.last_name}} </h6>
+                        <h6 class="m-0">{{loginService.user && loginService.user.first_name}} {{ loginService.user && loginService.user.last_name}} </h6>
                         <p class="font-weight-light text-muted mb-0" *ngIf="loginService.user!=null&&(loginService.user.role==1)"><small>Administrador</small> </p>
                         <p class="font-weight-light text-muted mb-0" *ngIf="loginService.user!=null&&(loginService.user.role==2)"><small>Profesor</small></p>
                         <p class="close-sesion"><a href="" (click)="cerrarSesion()"><h6><small>Cerrar Sesión</small></h6></a></p>  

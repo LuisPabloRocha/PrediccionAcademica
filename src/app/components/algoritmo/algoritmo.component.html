@@ -28,6 +28,7 @@
                             </li>
                         </ul>
                     </div>
+                   <h6></h6> 
                     <div class="tab-content mt-3" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-ann" role="tabpanel"
                             aria-labelledby="pills-ann-tab">
@@ -44,7 +45,7 @@
                                 </div>
                                 <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-parametros></app-parametros>
+                               <app-modelo  *ngIf="modelos!=null" [modelo] ="modelos[3]"></app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-rf" role="tabpanel" aria-labelledby="pills-rf-tab">
@@ -60,7 +61,7 @@
                                 </div>
                                 <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-parametros></app-parametros>
+                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[1]"></app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-nv" role="tabpanel" aria-labelledby="pills-nv-tab">
@@ -75,7 +76,7 @@
                                 </div>
                                 <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-parametros></app-parametros>
+                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[4]"></app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-svm" role="tabpanel" aria-labelledby="pills-svm-tab">
@@ -90,7 +91,7 @@
                                 </div>
                                 <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-parametros></app-parametros>
+                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[0]"></app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-j48" role="tabpanel" aria-labelledby="pills-j48-tab">
@@ -104,7 +105,7 @@
                                 </div>
                                 <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-parametros></app-parametros>
+                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[2]"></app-modelo>
                             </div>
                         </div>
                     </div>

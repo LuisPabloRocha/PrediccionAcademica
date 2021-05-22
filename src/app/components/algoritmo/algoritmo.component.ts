@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
+import { PredictionService } from 'src/app/services/prediction.service';
+
+//ICONOS 
 import { faTools } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,14 +13,29 @@ import { faQuestion } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./algoritmo.component.css']
 })
 export class AlgoritmoComponent implements OnInit {
-
+  public modelos;
   idAlgoritmo: number;
   faTools = faTools;
   faQuestion = faQuestion;
 
-  constructor() { }
+  constructor(
+    private predictionService: PredictionService,
+    private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.obtenModelos()
+  }
+
+  obtenModelos() {
+    this.predictionService.getModel(this.loginService.getToken()).subscribe(
+      response => {
+        console.log(response);
+        this.modelos = response;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }

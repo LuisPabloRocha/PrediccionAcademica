@@ -15,7 +15,6 @@ import { Label } from 'ng2-charts';
 export class PrediccionComponent implements OnInit {
   public columns = []
   public prediction;
-  public prediccion2 = []
   public widthANN : number;
   public widthNaive: number;
   public widthRF : number;
