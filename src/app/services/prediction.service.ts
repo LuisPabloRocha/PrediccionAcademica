@@ -35,12 +35,12 @@ export class PredictionService {
     })
     return this._http.get(this.url + 'prediction/model/pk', { headers: headers }).pipe(map(res => res)); //get -> post , columns -> fit 
   }
-  modelPKFit(data, token): Observable<any> {
+  modelPKFit(pk,data, token): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Token ' + token
     })
-    return this._http.post(this.url + 'prediction/model/pk/fit', data, { headers: headers }).pipe(map(res => res)); //get -> post , columns -> fit 
+    return this._http.post(this.url + 'prediction/model/'+pk+'/fit', data, { headers: headers }).pipe(map(res => res)); //get -> post , columns -> fit 
   }
   predict(data, token): Observable<any> {
     let headers = new HttpHeaders({
