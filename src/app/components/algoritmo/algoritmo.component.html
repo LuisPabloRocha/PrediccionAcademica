@@ -28,13 +28,16 @@
                             </li>
                         </ul>
                     </div>
-                   <h6></h6> 
+                    <h6></h6>
                     <div class="tab-content mt-3" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-ann" role="tabpanel"
                             aria-labelledby="pills-ann-tab">
                             <div class="container clasificador mb-5">
                                 <h5 class="pt-4">ANN (Artificial Neuronal Network)</h5>
-                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="separator mb-3">
+                                    <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;">
+                                    </fa-icon>
+                                </div>
                                 <div class="row">
                                     <p class="pl-3 pt-2 descripcion">Una red neuronal es un modelo simplificado que
                                         emula el modo en que el
@@ -43,69 +46,106 @@
                                         interconectadas que parecen versiones abstractas de neuronas.
                                     </p>
                                 </div>
-                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <div class="separator mb-3 mt-4">
+                                    <fa-icon [icon]="faTools"></fa-icon>
+                                </div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                               <app-modelo  *ngIf="modelos!=null" [modelo] ="modelos[3]"></app-modelo>
+                                <app-modelo *ngIf="modelos!=null" (actualizar)="obtenModelos()" [modelo]="modelos[3]">
+                                </app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-rf" role="tabpanel" aria-labelledby="pills-rf-tab">
                             <div class="container clasificador mb-5">
                                 <h5 class="pt-4">Random Forest</h5>
-                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="separator mb-3">
+                                    <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;">
+                                    </fa-icon>
+                                </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">Random Forest is an improvement upon bagged decision trees that disrupts the 
-                                        greedy splitting algorithm during tree creation so that split points can only be selected from a random subset 
-                                        of the input attributes. This simple change can have a big effect decreasing the similarity between the bagged trees 
+                                    <p class="pl-3 pt-2 descripcion">Random Forest is an improvement upon bagged
+                                        decision trees that disrupts the
+                                        greedy splitting algorithm during tree creation so that split points can only be
+                                        selected from a random subset
+                                        of the input attributes. This simple change can have a big effect decreasing the
+                                        similarity between the bagged trees
                                         and in turn the resulting predictions.
                                     </p>
                                 </div>
-                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <div class="separator mb-3 mt-4">
+                                    <fa-icon [icon]="faTools"></fa-icon>
+                                </div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[1]"></app-modelo>
+                                <app-modelo *ngIf="modelos!=null" (actualizar)="obtenModelos()" [modelo]="modelos[1]">
+                                </app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-nv" role="tabpanel" aria-labelledby="pills-nv-tab">
                             <div class="container clasificador mb-5">
                                 <h5 class="pt-4">Naive Bayes</h5>
-                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="separator mb-3">
+                                    <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;">
+                                    </fa-icon>
+                                </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">Naive Bayes uses a simple implementation of Bayes Theorem (hence naive) where the prior probability 
-                                        for each class is calculated from the training data and assumed to be independent of 
+                                    <p class="pl-3 pt-2 descripcion">Naive Bayes uses a simple implementation of Bayes
+                                        Theorem (hence naive) where the prior probability
+                                        for each class is calculated from the training data and assumed to be
+                                        independent of
                                         each other (technically called conditionally independent).
                                     </p>
                                 </div>
-                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <div class="separator mb-3 mt-4">
+                                    <fa-icon [icon]="faTools"></fa-icon>
+                                </div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[4]"></app-modelo>
+                                <app-modelo *ngIf="modelos!=null" (actualizar)="obtenModelos()" [modelo]="modelos[4]">
+                                </app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-svm" role="tabpanel" aria-labelledby="pills-svm-tab">
                             <div class="container clasificador mb-5">
                                 <h5 class="pt-4">SVM (Support Vector Machine)</h5>
-                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="separator mb-3">
+                                    <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;">
+                                    </fa-icon>
+                                </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">SVM work by finding a line that best separates the data into the two groups. 
-                                        This is done using an optimization process that only considers those data instances in the training dataset that are 
-                                        closest to the line that best separates the classes. The instances are called support vectors, hence the name of the technique.
+                                    <p class="pl-3 pt-2 descripcion">SVM work by finding a line that best separates the
+                                        data into the two groups.
+                                        This is done using an optimization process that only considers those data
+                                        instances in the training dataset that are
+                                        closest to the line that best separates the classes. The instances are called
+                                        support vectors, hence the name of the technique.
                                     </p>
                                 </div>
-                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <div class="separator mb-3 mt-4">
+                                    <fa-icon [icon]="faTools"></fa-icon>
+                                </div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[0]"></app-modelo>
+                                <app-modelo *ngIf="modelos!=null" (actualizar)="obtenModelos()" [modelo]="modelos[0]">
+                                </app-modelo>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-j48" role="tabpanel" aria-labelledby="pills-j48-tab">
                             <div class="container clasificador mb-5">
                                 <h5 class="pt-4">J-48</h5>
-                                <div class="separator mb-3"> <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;"></fa-icon></div>
+                                <div class="separator mb-3">
+                                    <fa-icon [icon]="faQuestion" style="padding: 10px 19px 10px 19px !important;">
+                                    </fa-icon>
+                                </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">It is an algorithm to generate a decision tree that is generated by C4.5 (an extension of ID3). 
-                                        It is also known as a statistical classifier. For decision tree classification, we need a database.
+                                    <p class="pl-3 pt-2 descripcion">It is an algorithm to generate a decision tree that
+                                        is generated by C4.5 (an extension of ID3).
+                                        It is also known as a statistical classifier. For decision tree classification,
+                                        we need a database.
                                     </p>
                                 </div>
-                                <div class="separator mb-3 mt-4"> <fa-icon [icon]="faTools"></fa-icon></div>
+                                <div class="separator mb-3 mt-4">
+                                    <fa-icon [icon]="faTools"></fa-icon>
+                                </div>
                                 <!--CONFIGURACIÓN DE PARAMETROS-->
-                                <app-modelo *ngIf="modelos!=null" [modelo] ="modelos[2]"></app-modelo>
+                                <app-modelo *ngIf="modelos!=null" (actualizar)="obtenModelos()" [modelo]="modelos[2]">
+                                </app-modelo>
                             </div>
                         </div>
                     </div>
