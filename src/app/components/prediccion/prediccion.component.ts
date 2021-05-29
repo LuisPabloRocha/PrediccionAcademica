@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { PredictionService } from 'src/app/services/prediction.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as $ from 'jquery';
 
@@ -25,12 +26,13 @@ export class PrediccionComponent implements OnInit {
 
   constructor(
     private predictionService: PredictionService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private spinnerService : SpinnerService
   ) { this.prediction = null }
 
   ngOnInit(): void {
-
     this.obtenColumnas()
+
   }
 
   obtenColumnas() {

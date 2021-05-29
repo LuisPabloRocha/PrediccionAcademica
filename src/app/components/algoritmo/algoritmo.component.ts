@@ -6,6 +6,7 @@ import { PredictionService } from 'src/app/services/prediction.service';
 //ICONOS 
 import { faTools } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-algoritmo',
@@ -16,6 +17,7 @@ export class AlgoritmoComponent implements OnInit {
   public modelos;
   idAlgoritmo: number;
   faTools = faTools;
+  faChartLine = faChartLine;
   faQuestion = faQuestion;
 
   constructor(

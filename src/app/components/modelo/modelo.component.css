@@ -1,0 +1,19 @@
+.boton-aceptar{
+    background-color: rgb(255,207,105); 
+    border: 1px solid rgb(255,207,105);;
+    color: black;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 50px;
+}
+.boton-aceptar:hover{
+    background-color: white;
+    border: 1px solid white;
+}

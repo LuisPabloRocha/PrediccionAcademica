@@ -36,6 +36,24 @@
     text-justify: inter-word;
 }
 
+.score{
+    border-left: 7px solid rgb(122, 175, 62) !important;
+    padding: 10px;
+    border: 1px solid gainsboro;
+}
+
+.help fa-icon{
+    font-size: 20px;
+    padding: 10px 16px 10px 16px;
+
+    border-radius: 50%;
+    color: white ;
+}
+.card-body{
+    padding-left: 20px;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
 
 .separator {
     display: flex;

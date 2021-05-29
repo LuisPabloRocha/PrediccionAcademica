@@ -1,5 +1,5 @@
 <h5 class="pt-3 pl-2 pb-3 lead">Profesores</h5>
-
+<ngx-spinner></ngx-spinner>
 <div id="page-content-wrapper">
     <div class="page-content ml-3">
         <div class="container-fluid">
@@ -64,14 +64,15 @@
                     </div>
                 </div>
             </div>
-            <div class="container mt-5 mb-5">
-                <table class="table table-striped table-sm">
-                    <thead>
+            <div class="container mt-5 mb-5 p-2">
+                <table class="table table-sm">
+                    <thead class="thead-prof">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">Usuario</th>
+                            <th class="text-center" scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,6 +81,13 @@
                             <td>{{ profesor.first_name }}</td>
                             <td>{{ profesor.last_name }}</td>
                             <td>{{ profesor.username }}</td>
+                            <td class="acciones text-center">
+                                <a (click)="open(content, profesor)">
+                                    <fa-icon [icon]="faPen"></fa-icon>
+                                </a> 
+                                <a (click)="open(contentdelete, profesor)">
+                                    <fa-icon [icon]="faTrash"></fa-icon>
+                                </a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -87,3 +95,97 @@
         </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header" >
+        <div class="d-flex flex-row">
+            <div class="p-2">
+                <h4 class="modal-title" id="modal-basic-title">
+                    <fa-icon [icon]="faPen"></fa-icon>
+                </h4>
+            </div>
+            <div class="p-2">
+                <h5 class="modal-title" id="modal-basic-title">Modificar Profesor</h5>
+            </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" >
+        <div class="container">
+            <form *ngIf="profSeleccionado!=null">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNombre">Nombre(s)</label>
+                        <input type="email" class="form-control" id="inputNombre" [(ngModel)]="profSeleccionado.first_name"
+                            name="first_name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputApellido">Apellido(s)</label>
+                        <input type="text" class="form-control" id="inputApellido" placeholder=""
+                            [(ngModel)]="profSeleccionado.last_name" name="last_name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputUsuario">Usuario</label>
+                        <input type="text" class="form-control" id="inputUsuario" [(ngModel)]="profSeleccionado.username"
+                            name="username" placeholder="">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPass">Contraseña</label>
+                        <input type="text" class="form-control" id="inputPass" [(ngModel)]="profSeleccionado.password"
+                            name="password" placeholder="">
+                    </div>
+                </div>
+            </form>
+        </div>
+       
+    </div>
+    <div class="modal-footer" style="background-color: rgb(230, 230, 230);">
+        <div class="d-flex justify-content-end mt-2">
+            <button type="button" class="boton-gral-cancelar" (click)="modal.close('Close click')!">
+                Cancelar
+            </button>
+            <button type="button" class="boton-gral" (click)="modificaProfesor()" style="background-color: rgb(107, 86, 181) !important;">
+                Aceptar
+            </button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #contentdelete let-modal>
+    <div class="modal-header"  *ngIf="profSeleccionado!=null" >
+        <div class="d-flex flex-row">
+            <div class="p-2">
+                <h4 class="modal-title-delete" id="modal-basic-title">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                </h4>
+            </div>
+            <div class="p-2">
+                <h5 class="modal-title" id="modal-basic-title">¿Eliminar Profesor?</h5>
+            </div>
+        </div>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" >
+        <div class="container">
+            <h6 *ngIf="profSeleccionado!=null">¿Quieres eliminar a <strong style="color: rgb(34, 193, 248);;">"{{profSeleccionado.first_name}} {{profSeleccionado.last_name}}"</strong> ?</h6>
+            <p><small>Si eliminas a este profesor ya no podrás recuperarlo, ¿estás seguro de proceder con esta acción?</small> </p>
+        </div>
+      
+    </div>
+    <div class="modal-footer" style="background-color: rgb(230, 230, 230);">
+        <div class="d-flex justify-content-end mt-2">
+            <button type="button" class="boton-gral-cancelar" (click)="modal.close('Close click')!">
+                Cancelar
+            </button>
+            <button type="button" class="boton-gral" (click)="eliminaProfesor()" style="background-color: rgb(225, 24, 24) !important;">
+                Eliminar
+            </button>
+        </div>
+    </div>
+</ng-template>

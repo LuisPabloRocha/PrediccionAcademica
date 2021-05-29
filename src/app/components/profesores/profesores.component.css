@@ -24,3 +24,54 @@
  .busqueda{
      border-radius:15px;
  }
+
+.thead-prof{
+    background-color: rgb(230, 230, 230);
+    border-radius: 7px 20px 20px 7px !important; 
+    height: 300px !important;
+}
+.acciones a{
+    margin-right: 20px;
+    color: rgb(70, 70, 70);
+}
+.acciones a:hover{
+    color: rgb(255,207,105);
+    cursor: pointer;
+}
+
+.modal-title fa-icon {
+    font-size: 20px;
+    padding: 14px 18px 14px 18px;
+    background-color:rgb(214, 208, 233);
+    border-radius: 50%;
+    color: rgb(107, 86, 181); 
+}
+
+.modal-title-delete fa-icon {
+    font-size: 20px;
+    padding: 14px 18px 14px 18px;
+    background-color:rgb(228, 188, 188);
+    border-radius: 50%;
+    color: rgb(225, 24, 24) !important; 
+}
+
+.boton-gral-cancelar{
+    background-color: rgb(230, 230, 230); 
+    border: 1px solid;
+    color: black;
+    margin-right: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 50px;
+}
+.boton-gral-cancelar:hover{
+    background-color: white;
+    border: 1px solid white;
+}
+

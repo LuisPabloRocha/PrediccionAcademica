@@ -7,7 +7,9 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class CircleprogressComponent implements OnInit {
   @Input() promedio: number = 0;
+  @Input() colornuevo: string = "";
   public current: number = 0;
+  public gato: string = "#"
   max: number = 100;
   stroke: number = 15;
   radius: number = 70;
@@ -15,7 +17,7 @@ export class CircleprogressComponent implements OnInit {
   rounded: boolean = false;
   responsive: boolean = false;
   clockwise: boolean = true;
-  color: string = '#1B3257';
+  color: string = '#eaeaea';
   background: string = '#eaeaea';
   duration: number = 1700;
   animation: string = 'easeOutCubic';
@@ -60,6 +62,8 @@ export class CircleprogressComponent implements OnInit {
 
   ngOnInit(): void {
     this. current = this.promedio;
+    this.color = this.gato+this.colornuevo;
+    console.log(this.color)
   }
 
   getOverlayStyle() {

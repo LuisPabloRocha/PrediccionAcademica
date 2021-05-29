@@ -1,4 +1,5 @@
 <h5 class="pt-3 pl-2 pb-3 lead">Algoritmos</h5>
+<ngx-spinner></ngx-spinner>
 <div id="page-content-wrapper">
     <div class="page-content ml-3">
         <div class="container-fluid">
@@ -39,12 +40,35 @@
                                     </fa-icon>
                                 </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">Una red neuronal es un modelo simplificado que
-                                        emula el modo en que el
-                                        cerebro humano procesa la información:
-                                        Funciona simultaneando un número elevado de unidades de procesamiento
-                                        interconectadas que parecen versiones abstractas de neuronas.
-                                    </p>
+                                    <div class="col-sm-9">
+                                        <p class="pl-1 pt-2 descripcion">Una red neuronal es un modelo simplificado que
+                                            emula el modo en que el
+                                            cerebro humano procesa la información:
+                                            Funciona simultaneando un número elevado de unidades de procesamiento
+                                            interconectadas que parecen versiones abstractas de neuronas.
+                                        </p>
+                                        <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a> </p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="justify-content-center" style="margin-right: auto;">
+                                            <div class=" bg-white rounded score">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="texto">
+                                                            <div class="d-flex justify-content-center flex-column">
+                                                                <div class="text-center"><h6><fa-icon [icon]="faChartLine" style="padding: 10px 19px 10px 19px !important;">
+                                                                </fa-icon></h6></div>
+                                                                <div class="text-center"><h6>SCORE</h6></div>
+                                                                <div class="text-center" *ngIf="modelos!=null" >{{modelos[2].score*100 | number : '1.0-4'}}</div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                   
                                 </div>
                                 <div class="separator mb-3 mt-4">
                                     <fa-icon [icon]="faTools"></fa-icon>
@@ -62,14 +86,36 @@
                                     </fa-icon>
                                 </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">Random Forest is an improvement upon bagged
-                                        decision trees that disrupts the
-                                        greedy splitting algorithm during tree creation so that split points can only be
-                                        selected from a random subset
-                                        of the input attributes. This simple change can have a big effect decreasing the
-                                        similarity between the bagged trees
-                                        and in turn the resulting predictions.
-                                    </p>
+                                    <div class="col-sm-9">
+                                        <p class="pl-1 pt-2 descripcion">Random Forest is an improvement upon bagged
+                                            decision trees that disrupts the
+                                            greedy splitting algorithm during tree creation so that split points can only be
+                                            selected from a random subset
+                                            of the input attributes. This simple change can have a big effect decreasing the
+                                            similarity between the bagged trees
+                                            and in turn the resulting predictions.
+                                        </p>
+                                        <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a> </p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="justify-content-center" style="margin-right: auto;">
+                                            <div class=" bg-white rounded score">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="texto">
+                                                            <div class="d-flex justify-content-center flex-column">
+                                                                <div class="text-center"><h6><fa-icon [icon]="faChartLine" style="padding: 10px 19px 10px 19px !important;">
+                                                                </fa-icon></h6></div>
+                                                                <div class="text-center"><h6>SCORE</h6></div>
+                                                                <div class="text-center" *ngIf="modelos!=null" >{{modelos[2].score*100 | number : '1.0-4'}}</div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>                                
                                 </div>
                                 <div class="separator mb-3 mt-4">
                                     <fa-icon [icon]="faTools"></fa-icon>
@@ -87,12 +133,34 @@
                                     </fa-icon>
                                 </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">Naive Bayes uses a simple implementation of Bayes
-                                        Theorem (hence naive) where the prior probability
-                                        for each class is calculated from the training data and assumed to be
-                                        independent of
-                                        each other (technically called conditionally independent).
-                                    </p>
+                                    <div class="col-sm-9">
+                                        <p class="pl-1 pt-2 descripcion">Naive Bayes uses a simple implementation of Bayes
+                                            Theorem (hence naive) where the prior probability
+                                            for each class is calculated from the training data and assumed to be
+                                            independent of
+                                            each other (technically called conditionally independent).
+                                        </p>
+                                        <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a> </p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="justify-content-center" style="margin-right: auto;">
+                                            <div class=" bg-white rounded score">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="texto">
+                                                            <div class="d-flex justify-content-center flex-column">
+                                                                <div class="text-center"><h6><fa-icon [icon]="faChartLine" style="padding: 10px 19px 10px 19px !important;">
+                                                                </fa-icon></h6></div>
+                                                                <div class="text-center"><h6>SCORE</h6></div>
+                                                                <div class="text-center" *ngIf="modelos!=null" >{{modelos[2].score*100 | number : '1.0-4'}}</div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>                                
                                 </div>
                                 <div class="separator mb-3 mt-4">
                                     <fa-icon [icon]="faTools"></fa-icon>
@@ -110,13 +178,39 @@
                                     </fa-icon>
                                 </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">SVM work by finding a line that best separates the
-                                        data into the two groups.
-                                        This is done using an optimization process that only considers those data
-                                        instances in the training dataset that are
-                                        closest to the line that best separates the classes. The instances are called
-                                        support vectors, hence the name of the technique.
-                                    </p>
+                                    <div class="col-sm-9">
+                                        <p class="pl-1 pt-2 descripcion">SVM work by finding a line that best separates the
+                                            data into the two groups.
+                                            This is done using an optimization process that only considers those data
+                                            instances in the training dataset that are
+                                            closest to the line that best separates the classes. The instances are called
+                                            support vectors, hence the name of the technique.
+                                        </p>
+                                
+                                        <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a> </p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="justify-content-center" style="margin-right: auto;">
+                                            <div class=" bg-white rounded score">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="texto">
+                                                            <div class="d-flex justify-content-center flex-column">
+                                                                <div class="text-center"><h6><fa-icon [icon]="faChartLine" style="padding: 10px 19px 10px 19px !important;">
+                                                                </fa-icon></h6></div>
+                                                                <div class="text-center"><h6>SCORE</h6></div>
+                                                                <div class="text-center" *ngIf="modelos!=null" >{{modelos[2].score*100 | number : '1.0-4'}}</div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>                                
+                                </div>
+                                <div class="row">
+                                    <p class="pl-3 pt-2 descripcion">
                                 </div>
                                 <div class="separator mb-3 mt-4">
                                     <fa-icon [icon]="faTools"></fa-icon>
@@ -134,11 +228,33 @@
                                     </fa-icon>
                                 </div>
                                 <div class="row">
-                                    <p class="pl-3 pt-2 descripcion">It is an algorithm to generate a decision tree that
-                                        is generated by C4.5 (an extension of ID3).
-                                        It is also known as a statistical classifier. For decision tree classification,
-                                        we need a database.
-                                    </p>
+                                    <div class="col-sm-9">
+                                        <p class="pl-1 pt-2 descripcion">It is an algorithm to generate a decision tree that
+                                            is generated by C4.5 (an extension of ID3).
+                                            It is also known as a statistical classifier. For decision tree classification,
+                                            we need a database.
+                                        </p>
+                                        <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a> </p>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="justify-content-center" style="margin-right: auto;">
+                                            <div class=" bg-white rounded score">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="texto">
+                                                            <div class="d-flex justify-content-center flex-column">
+                                                                <div class="text-center"><h6><fa-icon [icon]="faChartLine" style="padding: 10px 19px 10px 19px !important;">
+                                                                </fa-icon></h6></div>
+                                                                <div class="text-center"><h6>SCORE</h6></div>
+                                                                <div class="text-center" *ngIf="modelos!=null" >{{modelos[2].score*100 | number : '1.0-4'}}</div>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>                                
                                 </div>
                                 <div class="separator mb-3 mt-4">
                                     <fa-icon [icon]="faTools"></fa-icon>

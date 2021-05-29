@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { TeacherService } from 'src/app/services/teacher.service';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-profesores',
@@ -9,8 +12,12 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./profesores.component.css']
 })
 export class ProfesoresComponent implements OnInit {
+  closeResult = '';
   public isCollapsed = true;
   public faUserPlus = faUserPlus;
+  public faTrash = faTrash;
+  public faPen = faPen;
+  public profSeleccionado;
   /**Variable para guardar los datos de un nuevo profesor */
   public profesor = {
     /**Nombre de usuario */
@@ -31,12 +38,13 @@ export class ProfesoresComponent implements OnInit {
 
   constructor(
     private teacherService: TeacherService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
     this.inicializaVariables()
-    this.obtenProfesores()
+    this.obtenProfesores() 
   }
 
   /**
@@ -104,5 +112,60 @@ export class ProfesoresComponent implements OnInit {
       );
     }
   }
+
+  /**
+   * Función para eliminar profesores en la lista
+   */
+   eliminaProfesor() {
+    this.teacherService.deleteTeacher(this.profSeleccionado.id, this.loginService.getToken()).subscribe(
+      response => {
+        this.obtenProfesores()
+        this.modalService.dismissAll()
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  /**
+   * Función para modificar profesores en la lista
+   */
+   modificaProfesor() {
+    this.teacherService.editTeacher(this.profSeleccionado.id, this.profSeleccionado ,this.loginService.getToken()).subscribe(
+      response => {
+        this.obtenProfesores()
+        this.modalService.dismissAll()
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  /**
+   * Funciónes del MODAL
+   */
+  open(content, profesor) {
+    this.profSeleccionado=profesor;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', centered: true, animation:true},  ).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    this.profSeleccionado = null;
+    this.obtenProfesores()
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }  
+  }
+ 
 
 }

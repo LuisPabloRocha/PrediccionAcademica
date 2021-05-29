@@ -36,9 +36,10 @@ p{
     border-radius: 0px 7px 7px 0px;
     color: white;
 }
+
+
 #card-general{
     border-radius: 10px !important;
-    background-color: red; 
 }
 
 .separator {
@@ -101,7 +102,7 @@ p{
 }
 
 .barra5{
-    background-color: rgb(155, 104, 237);
+    background-color: rgb(140, 149, 217);
 }
 
 
