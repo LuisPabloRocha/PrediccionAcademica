@@ -8,27 +8,31 @@
           <!-- COLUMNA IZQUIERDA ATRIBUTOS A LLENAR POR EL USUARIO -->
           <div class="col-lg-5 mb-4">
             <h6 class="mb-4"><strong>INFORMACIÓN DEL ALUMNO</strong></h6>
+            <p *ngIf="prediction!=null">Faltan rellenar campos</p>
             <!--CICLO DE IMPRESIÓN DE ATRIBUTOS (BACKEND)-->
-            <ng-container *ngFor="let column of columns">
-              <div class="row" *ngIf="column.name!='numED1'">
-                <div class="col-sm-7">
-                  <label style="width: 100%;"><small>{{column.description}}</small></label>
-                </div>
-                <div class="col-sm-5">
-                  <div class="input-group input-group-sm mb-2">                
-                    <input type="text" *ngIf="!column.combo" class="form-control" [(ngModel)]="column.data"
-                      placeholder="{{column.ranges[1]}}-{{column.ranges.length-1}}" />
-                    <select class="form-control" id="combo-select" *ngIf="column.combo" [(ngModel)]="column.data" >
-                      <option *ngFor="let value of column.ranges" >{{value}}</option>
-                     
-                    </select>
+            <form [formGroup]="forma">
+              <ng-container *ngFor="let column of columns">
+                <div class="row" *ngIf="column.name!='numED1'">
+                  <div class="col-sm-7">
+                    <label style="width: 100%;"><small>{{column.description}}</small></label>
                   </div>
-                </div>
-              </div>
+                  <div class="col-sm-5">
+                    <div class="form-group input-group-sm mb-2" >                
+                      <input type="number" *ngIf="!column.combo" class="form-control" [(ngModel)]="column.data"
+                        placeholder="{{column.ranges[1]}}-{{column.ranges.length-1}}" formControlName ="{{column.name}}"
+                        [ngClass] ="{'is-invalid' : forma.get(column.name).errors || column.name.requiered}"/>                      
+                      <select class="form-control" id="combo-select" *ngIf="column.combo" [(ngModel)]="column.data" [ngModelOptions]="{standalone: true}" required >
+                        <option *ngFor="let value of column.ranges" >{{value}}</option>
+                      </select>   
+                    </div>
+                  </div>               
+                </div>         
             </ng-container>
             <div class="d-flex justify-content-end mt-2">
-              <button class="boton" (click)="obtenPrediccion()">Predecir</button>
+              <button class="boton"  type="submit"  (click)="obtenPrediccion()">Predecir</button>
             </div>
+            </form>
+           
           </div>
           <!--COLUMNA DERECHA RESULTADOS DE PREDICCIÓN-->
           <div class="col-lg-7 mb-5" *ngIf="prediction!=null">

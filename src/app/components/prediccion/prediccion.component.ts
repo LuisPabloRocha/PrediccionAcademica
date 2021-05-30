@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { PredictionService } from 'src/app/services/prediction.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import * as $ from 'jquery';
 
 
@@ -23,16 +24,30 @@ export class PrediccionComponent implements OnInit {
   public widthSVM: number;
   public promedio: number;
   public resPositivo:number=0;
+  forma : FormGroup;
+  public califificacion;
 
   constructor(
     private predictionService: PredictionService,
     private loginService: LoginService,
-    private spinnerService : SpinnerService
+    private formBuilder: FormBuilder
   ) { this.prediction = null }
+
 
   ngOnInit(): void {
     this.obtenColumnas()
+    this.buildForm()
 
+  }
+
+  buildForm(){
+    this.forma = this.formBuilder.group({
+      califED1 : new FormControl('',[Validators.max(100),Validators.min(0),]),
+      numPen : new FormControl('',[Validators.max(100), Validators.min(0)]),
+      califPen : new FormControl('',[Validators.max(100), Validators.min(0)]),
+      promAprob : new FormControl('',[Validators.max(100), Validators.min(0)]),
+      promGral : new FormControl('',[Validators.max(100), Validators.min(0)]),
+    })
   }
 
   obtenColumnas() {
@@ -46,7 +61,6 @@ export class PrediccionComponent implements OnInit {
       },
       error => {
         console.log(error);
-
       }
     )
   }

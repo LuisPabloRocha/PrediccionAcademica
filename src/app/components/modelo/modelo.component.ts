@@ -31,7 +31,7 @@ export class ModeloComponent implements OnInit {
   }
 
   trainingModel() {
-    console.log(this.modelo);
+    //console.log(this.modelo);
     let data = { attributes: [] }
     this.modelo.attributes.forEach(element => {
       data.attributes.push({ name: element.name, value: element.actualValue })
