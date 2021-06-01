@@ -11,7 +11,7 @@
                                 <a *ngIf="modelo.pillId!='pills-ann'" class="nav-link" id="{{modelo.pillId}}-tab"
                                     data-toggle="pill" href="#{{modelo.pillId}}" role="tab"
                                     aria-controls="{{modelo.pillId}}" aria-selected="false">{{modelo.pill}}</a>
-                                <a *ngIf="modelo.pillId=='pills-ann'" class="nav-link" id="{{modelo.pillId}}-tab"
+                                <a *ngIf="modelo.pillId=='pills-ann'" class="nav-link active" id="{{modelo.pillId}}-tab"
                                     data-toggle="pill" href="#{{modelo.pillId}}" role="tab"
                                     aria-controls="{{modelo.pillId}}" aria-selected="true">{{modelo.pill}}</a>
                             </li>
@@ -32,7 +32,7 @@
                                     <div class="row">
                                         <div class="col-sm-9">
                                             <p class="pl-1 pt-2 descripcion">{{modelo.description}}</p>
-                                            <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a>
+                                            <p class="pl-1 pt-2 linkmodelo" style="font-size: 13px;"><a href="{{modelo.linkmodelo}}" target="_blank">Checa aquí la documentación</a>
                                             </p>
                                         </div>
                                         <div class="col-sm-3">
@@ -45,12 +45,12 @@
                                                                     <div class="text-center">
                                                                         <h6>
                                                                             <fa-icon [icon]="faChartLine"
-                                                                                style="padding: 10px 19px 10px 19px !important;">
+                                                                                style="padding: 10px 19px 10px 19px !important; color: rgb(122, 175, 62); font-size: 20px;">
                                                                             </fa-icon>
                                                                         </h6>
                                                                     </div>
                                                                     <div class="text-center">
-                                                                        <h6>SCORE</h6>
+                                                                        <h6><strong>SCORE</strong> </h6>
                                                                     </div>
                                                                     <div class="text-center" *ngIf="modelos!=null">
                                                                         {{modelo.score*100 | number : '1.0-4'}}
@@ -84,7 +84,7 @@
                                     <div class="row">
                                         <div class="col-sm-9">
                                             <p class="pl-1 pt-2 descripcion">{{modelo.description}}</p>
-                                            <p class="pl-1 pt-2 descripcion"><a href="">Checa aquí la documentación</a>
+                                            <p class="pl-1 pt-2 descripcion"><a href="{{modelo.linkmodelo}}" target="_blank">Checa aquí la documentación</a>
                                             </p>
                                         </div>
                                         <div class="col-sm-3">

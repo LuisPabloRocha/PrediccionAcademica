@@ -8,7 +8,6 @@
           <!-- COLUMNA IZQUIERDA ATRIBUTOS A LLENAR POR EL USUARIO -->
           <div class="col-lg-5 mb-4">
             <h6 class="mb-4"><strong>INFORMACIÓN DEL ALUMNO</strong></h6>
-            <p *ngIf="prediction!=null">Faltan rellenar campos</p>
             <!--CICLO DE IMPRESIÓN DE ATRIBUTOS (BACKEND)-->
             <form [formGroup]="forma">
               <ng-container *ngFor="let column of columns">
@@ -74,7 +73,7 @@
                 </div>
               </div>
             </div>
-            <div class="separator mb-3">
+            <div class="separator mb-3 mt-3 ">
               <h6><small><strong> RESULTADO POR ALGORITMO </strong> </small></h6>
             </div>
             <div class="row">
@@ -85,12 +84,14 @@
                 <h6 *ngIf="widthANN>=70"><small><strong>SI</strong></small></h6>
                 <h6 *ngIf="widthANN<70"><small><strong>NO</strong></small></h6>
               </div>
-              <div class="col-sm-8">
-                <div class="progress">
+              <div class="col-sm-1 pr-1">
+                <h6 ><small><strong> {{prediction.ANN.SI*100 |
+                  number : '1.0-4'}}</strong></small></h6>
+              </div>
+              <div class="col-sm-6">
+                <div class="progress"  style="margin-top: 4px;">
                   <div class="progress-bar barra1" role="progressbar" [style.width.%]="widthANN" aria-valuenow="width2"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100"><small><strong> {{prediction.ANN.SI*100 |
-                      number : '1.0-4'}}</strong></small></h6>
                   </div>
                 </div>
               </div>
@@ -104,12 +105,16 @@
                 <h6 *ngIf="widthRF>=70"><small><strong>SI</strong></small></h6>
                 <h6 *ngIf="widthRF<70"><small><strong>NO</strong></small></h6>
               </div>
-              <div class="col-sm-8">
-                <div class="progress">
+              <div class="col-sm-1 pr-1">
+                <h6 ><small><strong> {{prediction.RandomForest.SI*100 |
+                  number : '1.0-4'}}</strong></small></h6>
+              </div>
+              <div class="col-sm-6">
+                <div class="progress" style="margin-top: 4px;">
                   <div class="progress-bar barra2" role="progressbar" [style.width.%]="widthRF" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
                     <h6 class="justify-content-center d-flex position-absolute w-100">
-                      <small> <strong>{{prediction.RandomForest.SI*100 | number : '1.0-2'}}</strong></small>
+
                     </h6>
                   </div>
                 </div>
@@ -124,12 +129,14 @@
                 <h6 *ngIf="widthNaive>=70"><small><strong>SI</strong></small></h6>
                 <h6 *ngIf="widthNaive<70"><small><strong>NO</strong></small></h6>
               </div>
-              <div class="col-sm-8">
-                <div class="progress">
+              <div class="col-sm-1 pr-1">
+                <h6 ><small><strong> {{prediction.NaiveBayes.SI*100 |
+                  number : '1.0-4'}}</strong></small></h6>
+              </div>
+              <div class="col-sm-6">
+                <div class="progress" style="margin-top: 4px;">
                   <div class="progress-bar barra3" role="progressbar" [style.width.%]="widthNaive" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100">
-                      <small><strong>{{prediction.NaiveBayes.SI*100 | number : '1.0-4'}}</strong> </small></h6>
                   </div>
                 </div>
               </div>
@@ -143,12 +150,14 @@
                 <h6 *ngIf="widthSVM>=70"><small><strong>SI</strong></small></h6>
                 <h6 *ngIf="widthSVM<70"><small><strong>NO</strong></small></h6>
               </div>
-              <div class="col-sm-8">
-                <div class="progress">
+              <div class="col-sm-1 pr-1">
+                <h6 ><small><strong> {{prediction.SVM.SI*100 |
+                  number : '1.0-4'}}</strong></small></h6>
+              </div>
+              <div class="col-sm-6">
+                <div class="progress" style="margin-top: 4px;">
                   <div class="progress-bar barra5" role="progressbar" [style.width.%]="widthSVM" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100">
-                    <h6 class="justify-content-center d-flex position-absolute w-100"><small><strong>{{prediction.SVM.SI*100 |
-                      number : '1.0-4'}}</strong> </small></h6>
                   </div>
                 </div>
               </div>
