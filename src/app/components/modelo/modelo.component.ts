@@ -74,19 +74,36 @@ export class ModeloComponent implements OnInit {
 
     this.predictionService.modelPKFit(this.modelo.id, data, this.loginService.getToken()).subscribe(
       response => {
-        console.log(response);
-        this.actualizar.emit(true)
-        this.open(this.myModal)
-        setTimeout(() => {
-          this.modalService.dismissAll()
-        },
-          7000);
+        console.log(response)
+        this.actualizaModelo()
       },
       error => {
         console.log(error);
       }
     )
   }
+
+  muestraModal() {
+    this.actualizar.emit(true)
+    this.open(this.myModal)
+    setTimeout(() => {
+      this.modalService.dismissAll()
+    },
+      7000);
+  }
+
+  actualizaModelo() {
+    this.predictionService.getModelPK(this.modelo.id, this.loginService.getToken()).subscribe(
+      response => {
+        this.modelo.score = response.score;
+        this.muestraModal()
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-class', centered: true, animation: true, size: 'sm' },).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
