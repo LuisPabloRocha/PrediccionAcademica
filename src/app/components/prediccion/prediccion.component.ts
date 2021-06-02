@@ -75,8 +75,6 @@ export class PrediccionComponent implements OnInit {
       } else {
         data[element.name] = element.data
       }
-      if (element.name == "numED1")
-        data[element.name] = 1
     });
 
     this.predictionService.predict(data, this.loginService.getToken()).subscribe(
