@@ -29,7 +29,7 @@ export class TeacherService {
   }
   /**
   * Servicio para modificar un profesor
-  * @param pk PK de la profesor
+  * @param pk PK del profesor
   * @param data Datos del profesor a modificar
   * @param token Token del usuario
   * @returns "teacher"
